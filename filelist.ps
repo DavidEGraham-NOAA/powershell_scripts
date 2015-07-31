@@ -1,2 +1,6 @@
 Recursively list files
-get-childitem -recurse|foreach {$_.name | Out-File <filename>}
+get-childitem -recurse | foreach {$_.name | Out-File <filename> -Append}
+
+# --OR--
+
+get-childitem -recurse | Out-File <filename> -Append
